@@ -1,0 +1,89 @@
+{
+  "name": "sname",
+  "description": "blah blah",
+  "subjects": ["foo", "bar", "repub.>", "st.>"],
+  "retention": "interest",
+  "compression": "s2",
+  "max_consumers": 730,
+  "max_msgs": 731,
+  "max_msgs_per_subject": 741,
+  "max_bytes": 732,
+  "max_age": 43000000000,
+  "max_msg_size": 734,
+  "storage": "memory",
+  "num_replicas": 5,
+  "no_ack": true,
+  "template_owner": "twnr",
+  "discard": "new",
+  "duplicate_window": 42000000000,
+  "sealed": true,
+  "deny_delete": true,
+  "deny_purge": true,
+  "discard_new_per_subject": true,
+  "allow_rollup_hdrs": true,
+  "allow_direct": true,
+  "mirror_direct": true,
+  "metadata":{"meta-foo":"meta-bar"},
+  "first_seq": 82942,
+  "placement": {
+    "cluster": "clstr",
+    "tags": ["tag1", "tag2"]
+  },
+  "republish": {
+    "src": "repub.>",
+    "dest": "dest.>",
+    "headers_only": true
+  },
+  "subject_transform": {
+    "src": "sc_st_src0",
+    "dest": "sc_st_dest0"
+  },
+  "consumer_limits": {
+    "inactive_threshold": 50000000000,
+    "max_ack_pending": 42
+  },
+  "mirror": {
+    "name": "eman",
+    "opt_start_seq": 736,
+    "opt_start_time": "2020-11-05T19:33:21.163377Z",
+    "filter_subject": "mfsub",
+    "external": {
+      "api": "apithing",
+      "deliver": "dlvrsub"
+    },
+    "subject_transforms": [
+      {"src":"m_st_src0","dest":"m_st_dest0"},
+      {"src":"m_st_src1","dest":"m_st_dest1"}
+    ]
+  },
+  "sources": [
+    {
+      "name": "s0",
+      "opt_start_seq": 737,
+      "opt_start_time": "2020-11-05T19:33:21.163377Z",
+      "filter_subject": "s0sub",
+      "external": {
+        "api": "s0api",
+        "deliver": "s0dlvrsub"
+      },
+      "subject_transforms": [
+        {"src":"s0_st_src0","dest":"s0_st_dest0"},
+        {"src":"s0_st_src1","dest":"s0_st_dest1"}
+      ]
+    },
+    {
+      "name": "s1",
+      "opt_start_seq": 738,
+      "opt_start_time": "2020-11-05T19:33:21.163377Z",
+      "filter_subject": "s1sub",
+      "external": {
+        "api": "s1api",
+        "deliver": "s1dlvrsub"
+      },
+      "subject_transforms": [
+        {"src":"s1_st_src0","dest":"s1_st_dest0"},
+        {"src":"s1_st_src1","dest":"s1_st_dest1"}
+      ]
+    }
+  ]
+}
