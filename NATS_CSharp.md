@@ -2,8 +2,8 @@
 
 [A C# Client for NATS](https://github.com/nats-io/nats.net )  
 - Publish는 스레드 세이프 하다.
-    - Conn.cs 파일의 'internal void publish(string subject, string reply, byte[] data, int offset, int count)' 함수를 보면 내부에서 lock을 걸고 있다.
-- Publish를 호출하면 socket 쓰기를 한다.
+    - Connection.cs 파일의 `internal void PublishImpl(string subject, string reply, MsgHeader inHeaders, byte[] data, int offset, int? inCount, bool flushBuffer)` 함수를 보면 내부에서 lock을 걸고 있다.
+- Publish를 호출하면 socket 쓰기를 한다. 동기 I/O
     
     
 ## 예제 코드  
