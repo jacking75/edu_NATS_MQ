@@ -63,7 +63,7 @@ namespace DBServer
 
                 var responseMq = new MQResLogin()
                 {
-                    ID = MQPacketID.MQ_PACKET_ID_DB_LOGIN_RES.ToUInt16(),
+                    ID = (UInt16)MQPacketID.MQ_PACKET_ID_DB_LOGIN_RES,
                     SenderInitial = MQSenderInitialHelper.DBServerInitialToNumber,
                     SenderIndex = MyServerIndex,
                     UserNetSessionIndex = requestMQ.UserNetSessionIndex,

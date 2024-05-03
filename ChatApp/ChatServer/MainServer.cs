@@ -49,18 +49,18 @@ namespace ChatServer
 
         private void AppOnStarted()
         {
-            GlobalLogger.ZLogInformation("OnStarted");
+            GlobalLogger.ZLogInformation($"OnStarted");
 
             Start(ServerOpt);
         }
 
         private void AppOnStopped()
         {
-            GlobalLogger.ZLogInformation("OnStopped - begin");
+            GlobalLogger.ZLogInformation($"OnStopped - begin");
 
             Stop();
 
-            GlobalLogger.ZLogInformation("OnStopped - end");
+            GlobalLogger.ZLogInformation($"OnStopped - end");
         }
             
         public void Start(ServerOption serverOpt)
@@ -69,7 +69,7 @@ namespace ChatServer
             {
                 CreateComponent(serverOpt);
 
-                GlobalLogger.ZLogInformation("서버 생성 성공");
+                GlobalLogger.ZLogInformation($"서버 생성 성공");
             }
             catch (Exception ex)
             {

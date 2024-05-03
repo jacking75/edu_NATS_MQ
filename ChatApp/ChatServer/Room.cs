@@ -72,7 +72,7 @@ namespace ChatServer
         {
             var responseMq = new MQResRelay()
             {
-                ID = MQPacketID.MQ_PACKET_ID_RELAY_RES.ToUInt16(),
+                ID = (UInt16)MQPacketID.MQ_PACKET_ID_RELAY_RES,
                 SenderInitial = MQSenderInitialHelper.ChatServerInitialToNumber,
                 RelayData = relayData
             };

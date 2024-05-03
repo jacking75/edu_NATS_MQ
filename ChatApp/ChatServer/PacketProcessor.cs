@@ -103,7 +103,7 @@ namespace ChatServer
                 {
                     if(IsThreadRunning)
                     {
-                        MainServer.GlobalLogger.ZLogError(ExceptionHelper.ToString(ex));
+                        MainServer.GlobalLogger.ZLogError($"ExceptionHelper.ToString(ex)");
                     }
                 }
             }

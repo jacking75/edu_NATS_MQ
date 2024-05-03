@@ -74,7 +74,7 @@ namespace ChatServer.PKHandler
         {
             var responseMq = new MQResRoomEnter()
             {
-                ID = MQPacketID.MQ_PACKET_ID_ROOM_ENTER_RES.ToUInt16(),
+                ID = (UInt16)MQPacketID.MQ_PACKET_ID_ROOM_ENTER_RES,
                 SenderInitial = MQSenderInitialHelper.ChatServerInitialToNumber,
                 SenderIndex = Base.ServerOpt.ServerIndex,
                 UserNetSessionIndex = userNetSessionIndex,

@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 using ZLogger;
 
 using System.Threading.Tasks;
+using System;
 
 namespace DBServer
 {
@@ -23,7 +24,8 @@ namespace DBServer
                     var logConfig = hostContext.Configuration.GetSection("LogConfig");
                     logging.ClearProviders();
 
-                    logging.SetMinimumLevel(logConfig["Level"].ToEnum<LogLevel>());
+                    var loglevel = (LogLevel)Enum.Parse(typeof(LogLevel), logConfig["Level"]);
+                    logging.SetMinimumLevel(loglevel);
 
                     // Add Console Logging.
                     logging.AddZLoggerConsole();
